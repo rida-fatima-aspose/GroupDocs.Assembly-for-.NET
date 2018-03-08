@@ -358,6 +358,25 @@ namespace GroupDocs.AssemblyExamples
 
             #endregion
 
+            #region Ability to remove selective chart series
+            GenerateReport.RemoveSelectiveChartSeries();
+            #endregion
+
+            #region Dynamic Chart Axis Title 
+            //Dynamic Chart Axis Title in Word Document 
+            //GenerateReport.DynamicChartAxisTitle();
+            //Dynamic Chart Axis Title in Presentation Document
+            //GenerateReport.DynamicChartAxisTitlePPt();
+            //Dynamic Chart Axis Title in Spreadsheet Document 
+            //GenerateReport.DynamicChartAxisTitleSpreadSheet();
+            //Dynamic Chart Axis Title in Presentation Document
+            GenerateReport.DynamicChartAxisTitleEmail();
+            #endregion
+
+            #region Dynamic Color in wordpressing document 
+            //GenerateReport.DynamicColor();
+            #endregion
+
             //Update fields/formulas in word processing or spreadsheet documents
             //GenerateReport.UpdateWordDocFields("spreadsheet");
             //Use of Next keyword in template syntax

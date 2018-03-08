@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Assembly, Version=17.8.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GroupDocs.Assembly.17.8.0\lib\net40-client\GroupDocs.Assembly.dll</HintPath>
+    <Reference Include="GroupDocs.Assembly, Version=18.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GroupDocs.Assembly.18.1.0\lib\net40-client\GroupDocs.Assembly.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -66,6 +66,9 @@
       <Project>{65189345-c620-4736-8d0c-4bc6a25cfdee}</Project>
       <Name>GroupDocs.AssemblyExamples.ProjectEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

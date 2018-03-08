@@ -8,7 +8,7 @@ using GroupDocs.AssemblyExamples.BusinessLayer;
 using System.Diagnostics;
 using GroupDocs.AssemblyExamples.ProjectEntities;
 using GroupDocs.Assembly.Data;
-using static GroupDocs.AssemblyExamples.BusinessLayer.CommonUtilities;
+
 
 namespace GroupDocs.AssemblyExamples
 {
@@ -490,6 +490,140 @@ namespace GroupDocs.AssemblyExamples
                     break;
             }
         }
+
+        public static void DynamicChartAxisTitleEmail()
+        {
+            //ExStart:DynamicChartAxisTitleEmail
+            //Setting up source open document template
+            //Setting up source email template
+            const String strEmailTemplate = "Email Templates/Chart with Filtering, Grouping, and Ordering_Dynamic_Title.msg";
+            //Setting up destination email report 
+            const String strEmailReport = "Email Reports/Chart with Filtering, Grouping, and Ordering_Dynamic_Title.msg";
+            try
+            {
+                //Instantiate DocumentAssembler class
+                DocumentAssembler assembler = new DocumentAssembler();
+                string title = "Total Order Quantity by Quarters";
+                //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in email format
+                assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strEmailTemplate), CommonUtilities.SetDestinationDocument(strEmailReport), DataLayer.EmailDataSourceObject(strEmailTemplate, DataLayer.GetOrdersData(),title), DataLayer.EmailDataSourceName(".msg", "orders","title"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:DynamicChartAxisTitleEmail
+        }
+
+        public static void DynamicChartAxisTitleSpreadSheet()
+        {
+            //ExStart:DynamicChartAxisTitleSpreadSheet
+            //Setting up source open document template
+            const String strDocumentTemplate = "Spreadsheet Templates/Chart with Filtering, Grouping, and Ordering_Dynamic_Title.xlsx";
+            //Setting up destination open document report 
+            const String strDocumentReport = "Spreadsheet Reports/Chart with Filtering, Grouping, and Ordering_Dynamic_Title.xlsx";
+            try
+            {
+                //Instantiate DocumentAssembler class
+                DocumentAssembler assembler = new DocumentAssembler();
+                string title = "Total Order Quantity by Quarters";
+                //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in document format
+                assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), new object[] { DataLayer.GetOrdersData(), title }, new string[] { "orders", "title" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:DynamicChartAxisTitleSpreadSheet
+        }
+
+        public static void DynamicChartAxisTitlePPt()
+        {
+            //ExStart:DynamicChartAxisTitlePPt
+            //Setting up source open document template
+            const String strDocumentTemplate = "Presentation Templates/Chart with Filtering, Grouping, and Ordering_Dynamic_Title.pptx";
+            //Setting up destination open document report 
+            const String strDocumentReport = "Presentation Reports/Chart with Filtering, Grouping, and Ordering_Dynamic_Title.pptx";
+            try
+            {
+                //Instantiate DocumentAssembler class
+                DocumentAssembler assembler = new DocumentAssembler();
+                string title = "Total Order Quantity by Quarters";
+                //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in document format
+                assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), new object[] { DataLayer.GetOrdersData(), title }, new string[] { "orders", "title" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:DynamicChartAxisTitlePPt
+        }
+
+        public static void DynamicColor()
+        {
+            //ExStart:DynamicColor
+            //Setting up source open document template
+            const String strDocumentTemplate = "Word Templates/In-Table List with Running (Progressive) Total_BackgroundColor.docx";
+            //Setting up destination open document report 
+            const String strDocumentReport = "Word Reports/In-Table List with Running (Progressive) Total_BackgroundColor.docx";
+            try
+            {
+                //Instantiate DocumentAssembler class
+                DocumentAssembler assembler = new DocumentAssembler();
+                string color = "red";
+                //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in document format
+                assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), new object[] { DataLayer.GetOrdersData(), color }, new string[] { "orders", "color" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:DynamicColor
+        }
+
+        public static void DynamicChartAxisTitle()
+        {
+            //ExStart:DynamicChartAxisTitle
+            //Setting up source open document template
+            const String strDocumentTemplate = "Word Templates/Chart with Filtering, Grouping, and Ordering_dynamic_title.docx";
+            //Setting up destination open document report 
+            const String strDocumentReport = "Word Reports/Chart with Filtering, Grouping, and Ordering_dynamic_title.docx";
+            try
+            {
+                //Instantiate DocumentAssembler class
+                DocumentAssembler assembler = new DocumentAssembler();
+                string title = "Total Order Quantity by Quarters";
+                //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in document format
+                assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), new object[] { DataLayer.GetOrdersData(), title }, new string[] { "orders", "title" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:DynamicChartAxisTitle
+        }
+
+        public static void RemoveSelectiveChartSeries()
+        {
+            //ExStart:RemoveSelectiveChartSeries
+            //Setting up source open document template
+            const String strDocumentTemplate = "Word Templates/Chart with Filtering, Grouping, and Ordering_RemoveIf.docx";
+            //Setting up destination open document report 
+            const String strDocumentReport = "Word Reports/Chart with Filtering, Grouping, and Ordering_RemoveIf.docx";
+            try
+            {
+                //Instantiate DocumentAssembler class
+                DocumentAssembler assembler = new DocumentAssembler();
+                int mode = 2;
+                //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in document format
+                assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), new object[] { DataLayer.GetOrdersData(), mode }, new string[] { "orders", "mode" });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //ExEnd:RemoveSelectiveChartSeries
+        }
+
         public static void GenerateBulletedList(string strDocumentFormat, bool isDatabase, bool isDataSet, bool isDataSourceXML, bool isJson)
         {
             switch (strDocumentFormat)
@@ -815,7 +949,7 @@ namespace GroupDocs.AssemblyExamples
                             //Instantiate DocumentAssembler class
                             DocumentAssembler assembler = new DocumentAssembler();
                             // This is needed solely for images in HTML documents.
-                            assembler.KnownTypes.Add(typeof(FileUtil));
+                            assembler.KnownTypes.Add(typeof(GroupDocs.AssemblyExamples.BusinessLayer.CommonUtilities.FileUtil));
                             //Call AssembleDocument to generate Bulleted List Report in html format
                             assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strHtmlTemplate), CommonUtilities.SetDestinationDocument(strHtmlReport), DataLayer.GetProductsData(), "products");
                         }
@@ -968,7 +1102,7 @@ namespace GroupDocs.AssemblyExamples
                             //Instantiate DocumentAssembler class
                             DocumentAssembler assembler = new DocumentAssembler();
                             //Call AssembleDocument to generate Chart report with Filtering, Grouping, and Ordering in document format
-                            assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), DataLayer.GetOrdersData(), "orders");
+                            assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), DataLayer.GetOrdersDataDB(), "orders");
                         }
                         catch (Exception ex)
                         {
@@ -1910,7 +2044,7 @@ namespace GroupDocs.AssemblyExamples
                             //Instantiate DocumentAssembler class
                             DocumentAssembler assembler = new DocumentAssembler();
                             // This is needed solely for images in HTML documents.
-                            assembler.KnownTypes.Add(typeof(FileUtil));
+                            assembler.KnownTypes.Add(typeof(GroupDocs.AssemblyExamples.BusinessLayer.CommonUtilities.FileUtil));
                             //Call AssembleDocument to generate Common Master-Detail Report in html format
                             assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strDocumentTemplate), CommonUtilities.SetDestinationDocument(strDocumentReport), DataLayer.PopulateData(), "customers");
                         }
@@ -4144,6 +4278,7 @@ namespace GroupDocs.AssemblyExamples
                     const String strDocumentReport = "Word Reports/In-Table List with Running (Progressive) Total Report.docx";
                     try
                     {
+                        var testData = DataLayer.GetOrdersData();
                         //Instantiate DocumentAssembler class
                         DocumentAssembler assembler = new DocumentAssembler();
                         //Call AssembleDocument to generate In-Table List with Progressive(Running) total Report in open document format
@@ -5973,7 +6108,7 @@ namespace GroupDocs.AssemblyExamples
                             //Instantiate DocumentAssembler class
                             DocumentAssembler assembler = new DocumentAssembler();
                             // This is needed solely for images in HTML documents.
-                            assembler.KnownTypes.Add(typeof(FileUtil));
+                            assembler.KnownTypes.Add(typeof(GroupDocs.AssemblyExamples.BusinessLayer.CommonUtilities.FileUtil));
                             //Call AssembleDocument to generate Single Row Report in html format
                             assembler.AssembleDocument(CommonUtilities.GetSourceDocument(strHtmlTemplate), CommonUtilities.SetDestinationDocument(strHtmlReport), DataLayer.GetCustomerData(), "customer");
                         }
